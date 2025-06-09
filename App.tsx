@@ -17,7 +17,7 @@ import {
 import {pusherBeams} from 'rn-pusher-beams-sdk';
 
 function App(): React.JSX.Element {
-  const API_KEY = ''
+  const API_KEY = '3b541fe7-57c0-4cd4-a196-ebb9a7497be4'
   const handleRegister = () => {
     console.log(pusherBeams.registerForRemoteNotifications());
   };
@@ -43,6 +43,12 @@ function App(): React.JSX.Element {
   const handleClearInterest = () => {
     console.log(pusherBeams.clearDeviceInterests());
   };
+
+  const handleSetUserId = () => {
+    const AUTH_URL = ''
+    const BEARER_TOKEN = ''
+    console.log(pusherBeams.setUserId('userid03', AUTH_URL, BEARER_TOKEN))
+  }
 
   const handleStop = () => {
     console.log(pusherBeams.stop());
@@ -96,6 +102,11 @@ function App(): React.JSX.Element {
       </TouchableOpacity>
       <TouchableOpacity
         onPress={handleGetInterests}
+        style={{width: '100%', backgroundColor: 'lightblue', padding: 10}}>
+        <Text style={{fontSize: 20, textAlign: 'center'}}>Get interest</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={handleSetUserId}
         style={{width: '100%', backgroundColor: 'lightblue', padding: 10}}>
         <Text style={{fontSize: 20, textAlign: 'center'}}>Get interest</Text>
       </TouchableOpacity>
